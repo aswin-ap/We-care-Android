@@ -7,12 +7,86 @@
     android:orientation="vertical"
     tools:context=".staff.SHomeActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="top"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple_700"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
+                        android:gravity="center|start"
+                        android:paddingTop="3dp"
+                        android:textColor="@android:color/white"
+                        tools:text="Good Evening,\nShrikanth" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_gravity="top"
+                        android:drawableRight="@mipmap/ic_we_care"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:paddingTop="3dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:text="@string/app_name" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_all_patients"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
-        android:text="Patients" />
+        android:layout_margin="15dp"
+        android:text="Daily Routine Update"
+        android:textAllCaps="false" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/black"
+        android:text="Log out"
+        android:textAllCaps="false" />
+
 
 </LinearLayout>

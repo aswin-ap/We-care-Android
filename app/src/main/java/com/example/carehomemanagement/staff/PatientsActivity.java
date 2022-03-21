@@ -1,5 +1,7 @@
 package com.example.carehomemanagement.staff;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -7,15 +9,18 @@ import android.view.View;
 import androidx.annotation.NonNull;
 
 import com.example.carehomemanagement.BaseActivity;
+import com.example.carehomemanagement.LoginActivity;
 import com.example.carehomemanagement.R;
 import com.example.carehomemanagement.adapter.PatientsAdapter;
 import com.example.carehomemanagement.data.model.PatientModel;
+import com.example.carehomemanagement.data.prefrence.SessionManager;
 import com.example.carehomemanagement.databinding.ActivityPatientsBinding;
 import com.example.carehomemanagement.utils.NetworkManager;
 import com.example.carehomemanagement.utils.OnItemClickListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -49,6 +54,8 @@ public class PatientsActivity extends BaseActivity {
             @Override
             public void onItemClick(int position) {
                 PatientModel model = patientModels.get(position);
+                Intent i = new Intent(PatientsActivity.this, DailyRoutineActivity.class);
+                startActivity(i);
             }
         });
         binding.rvPatients.setHasFixedSize(true);

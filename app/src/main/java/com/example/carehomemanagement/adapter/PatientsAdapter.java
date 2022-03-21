@@ -52,6 +52,13 @@ public class PatientsAdapter extends RecyclerView.Adapter<PatientsAdapter.ViewHo
         else
             holder.imageView.setImageResource(R.drawable.old_female);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onItemClick(position);
+            }
+        });
+
 
     }
 

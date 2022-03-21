@@ -28,10 +28,10 @@ public class SplashActivity extends AppCompatActivity {
                     Intent i;
                     if (sessionManager.getUserName().equals("manager")) {
                         i = new Intent(SplashActivity.this,
-                                SHomeActivity.class);
+                                MHomeActivity.class);
                     } else {
                         i = new Intent(SplashActivity.this,
-                                MHomeActivity.class);
+                                SHomeActivity.class);
                     }
                     startActivity(i);
                 } else {

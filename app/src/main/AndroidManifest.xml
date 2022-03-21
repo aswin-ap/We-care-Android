@@ -14,9 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CareHomeManagement">
         <activity
-            android:name=".staff.PatientsActivity"
+            android:name=".staff.DailyRoutineActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
+        <activity
+            android:name=".staff.PatientsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".manager.AddPatientActivity"
             android:exported="false"
