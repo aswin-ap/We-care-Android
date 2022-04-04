@@ -55,6 +55,8 @@ public class PatientsActivity extends BaseActivity {
             public void onItemClick(int position) {
                 PatientModel model = patientModels.get(position);
                 Intent i = new Intent(PatientsActivity.this, DailyRoutineActivity.class);
+                i.putExtra("userId",model.getDocumentId());
+                i.putExtra("userName",model.getFirstName()+" "+model.getLastName());
                 startActivity(i);
             }
         });

@@ -68,14 +68,25 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_all_patients"
+        android:id="@+id/btn_daily_routine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="10dp"
         android:layout_margin="15dp"
         android:text="Daily Routine Update"
-        android:textAllCaps="false" />
+        android:textAllCaps="true" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_incident_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="15dp"
+        android:text="Incident Report"
+        android:textAllCaps="true" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_log_out"

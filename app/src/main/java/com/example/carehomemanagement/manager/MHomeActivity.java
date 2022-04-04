@@ -28,6 +28,7 @@ public class MHomeActivity extends AppCompatActivity {
 
     private void initView() {
         sessionManager = new SessionManager(this);
+        binding.textGreeting.setText("Hey,\n"+sessionManager.getUserName());
         binding.btnAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +36,22 @@ public class MHomeActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        binding.btnCarePlan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MHomeActivity.this, CarePlanActivity.class);
+                startActivity(i);
+            }
+        });
+
+        binding.btnIncidentReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MHomeActivity.this, IncidentReportActivity.class);
+                startActivity(i);
+            }
+        });
+
         binding.btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

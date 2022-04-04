@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.carehomemanagement.LoginActivity;
 import com.example.carehomemanagement.data.prefrence.SessionManager;
 import com.example.carehomemanagement.databinding.ActivityShomeBinding;
+import com.example.carehomemanagement.manager.IncidentReportActivity;
+import com.example.carehomemanagement.utils.Constants;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SHomeActivity extends AppCompatActivity {
@@ -27,13 +29,24 @@ public class SHomeActivity extends AppCompatActivity {
 
     private void initView() {
         sessionManager = new SessionManager(this);
-        binding.btnAllPatients.setOnClickListener(new View.OnClickListener() {
+        binding.textGreeting.setText("Hey,\n"+sessionManager.getUserName());
+        binding.btnDailyRoutine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(SHomeActivity.this, PatientsActivity.class);
+                i.putExtra("FROM", Constants.DAILY_ROUTINE);
                 startActivity(i);
             }
         });
+
+        binding.btnIncidentReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SHomeActivity.this, IncidentReportActivity.class);
+                startActivity(i);
+            }
+        });
+
         binding.btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

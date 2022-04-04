@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import com.example.carehomemanagement.data.prefrence.SessionManager;
 import com.example.carehomemanagement.databinding.ActivityLoginBinding;
 import com.example.carehomemanagement.manager.MHomeActivity;
+import com.example.carehomemanagement.staff.SHomeActivity;
 import com.example.carehomemanagement.utils.NetworkManager;
 import com.example.carehomemanagement.utils.Validation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -75,13 +76,22 @@ public class LoginActivity extends BaseActivity {
                                         sessionManager.setUserName(documentSnapshot.get("name").toString());
                                         sessionManager.setUserTypeId(documentSnapshot.get("type").toString());
                                         sessionManager.setLogin(true);
+                                        Intent intent;
+                                        if (documentSnapshot.get("type").toString().equals("m")) {
+                                            intent = new Intent(LoginActivity.this, MHomeActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            showToast(LoginActivity.this, "Login Successfully");
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            intent = new Intent(LoginActivity.this, SHomeActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                            showToast(LoginActivity.this, "Login Successfully");
+                                            startActivity(intent);
+                                            finish();
+                                        }
 
 
-                                        Intent intent = new Intent(LoginActivity.this, MHomeActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        showToast(LoginActivity.this, "Login Successfully");
-                                        startActivity(intent);
-                                        finish();
                                     } else
                                         isMatch = false;
                                 }
